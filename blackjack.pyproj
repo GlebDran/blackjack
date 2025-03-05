@@ -24,6 +24,7 @@
     <Compile Include="blackjack.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="casino.png" />
     <Content Include="pilt1.jpg" />
     <Content Include="tulemused.txt" />
   </ItemGroup>

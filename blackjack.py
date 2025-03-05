@@ -1,6 +1,7 @@
 import tkinter as tk
 import random
 import os
+from PIL import Image, ImageTk
 
 # Карточные масти
 SUITS = ["♥", "♦", "♣", "♠"]
@@ -18,6 +19,13 @@ class BlackjackGame:
         self.root.title("Gleb Casino")
         self.root.geometry("500x600")
         self.root.configure(bg="green")
+
+        # Установка иконки
+        try:
+            self.icon = ImageTk.PhotoImage(file="casino.png")  # PNG
+            root.iconphoto(True, self.icon)
+        except Exception as e:
+            print("Ошибка загрузки иконки:", e)
 
         # UI Элементы
         self.name_label = tk.Label(root, text="Sisesta oma nimi:", bg="green", fg="black", font=("Times New Roman", 20, "bold"))
