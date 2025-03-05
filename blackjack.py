@@ -15,42 +15,42 @@ CARD_VALUES = {
 class BlackjackGame:
     def __init__(self, root):
         self.root = root
-        self.root.title("Blackjack")
+        self.root.title("Gleb Casino")
         self.root.geometry("500x600")
         self.root.configure(bg="green")
 
         # UI Элементы
-        self.name_label = tk.Label(root, text="Sisesta oma nimi:", bg="green", fg="white", font=("Arial", 12))
+        self.name_label = tk.Label(root, text="Sisesta oma nimi:", bg="green", fg="black", font=("Times New Roman", 20, "bold"))
         self.name_label.pack()
-        self.name_entry = tk.Entry(root, font=("Arial", 12))
+        self.name_entry = tk.Entry(root, font=("Times New Roman", 20))
         self.name_entry.pack()
 
-        self.label = tk.Label(root, text="Vajuta 'Alusta mängu'", font=("Arial", 14, "bold"), bg="green", fg="yellow")
+        self.label = tk.Label(root, text="Vajuta 'Alusta mängu'", font=("Times New Roman", 15, "bold"), bg="green", fg="yellow")
         self.label.pack(pady=10)
 
-        self.start_button = tk.Button(root, text="Alusta mängu", command=self.start_game, font=("Arial", 12), bg="white")
-        self.start_button.pack()
+        self.start_button = tk.Button(root, text="Alusta mängu", command=self.start_game, font=("Times New Roman", 15), bg="white")
+        self.start_button.pack(pady=5)
 
-        self.hit_button = tk.Button(root, text="Võta kaart", command=self.hit, state=tk.DISABLED, font=("Arial", 12), bg="white")
-        self.hit_button.pack()
+        self.hit_button = tk.Button(root, text="Võta kaart", command=self.hit, state=tk.DISABLED, font=("Times New Roman", 15), bg="white")
+        self.hit_button.pack(pady=5)
 
-        self.stand_button = tk.Button(root, text="Peatu", command=self.stand, state=tk.DISABLED, font=("Arial", 12), bg="white")
-        self.stand_button.pack()
+        self.stand_button = tk.Button(root, text="Peatu", command=self.stand, state=tk.DISABLED, font=("Times New Roman", 15), bg="white")
+        self.stand_button.pack(pady=5)
 
-        self.history_button = tk.Button(root, text="Vaata ajalugu", command=self.show_history, font=("Arial", 12), bg="white")
-        self.history_button.pack()
+        self.history_button = tk.Button(root, text="Vaata ajalugu", command=self.show_history, font=("Times New Roman", 15), bg="white")
+        self.history_button.pack(pady=5)
 
-        self.result_label = tk.Label(root, text="", font=("Arial", 14, "bold"), bg="green", fg="white")
+        self.result_label = tk.Label(root, text="", font=("Times New Roman", 15, "bold"), bg="green", fg="white")
         self.result_label.pack(pady=10)
 
         # Отображение карт игрока и компьютера
-        self.player_cards_label = tk.Label(root, text="", font=("Arial", 18), bg="green", fg="white")
+        self.player_cards_label = tk.Label(root, text="", font=("Times New Roman", 20), bg="green", fg="black")
         self.player_cards_label.pack(pady=5)
 
-        self.computer_cards_label = tk.Label(root, text="", font=("Arial", 18), bg="green", fg="white")
+        self.computer_cards_label = tk.Label(root, text="", font=("Times New Roman", 20), bg="green", fg="black")
         self.computer_cards_label.pack(pady=5)
 
-        self.history_text = tk.Text(root, height=10, width=50, state=tk.DISABLED, font=("Arial", 10))
+        self.history_text = tk.Text(root, height=10, width=50, state=tk.DISABLED, font=("Times New Roman", 15))
         self.history_text.pack(pady=10)
 
         self.player_cards = []
