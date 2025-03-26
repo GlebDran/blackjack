@@ -36,12 +36,14 @@ def generate_nonce(length=16):
 
 # Отправка email
 def saada_email(to_email, payment_reference):
+    global amount
+    amount=amount_entry.get().strip()
     sender = "glebdranitsyn@gmail.com"
     password = "oeid ycrk uwit tnpk"
-    content = f"Tere!\n\nTeie makse (ID: {payment_reference}) õnnestus edukalt.\n\nAitäh!"
+    content = f"Tere!\n\nTeie makse (Summa on: {amount} õnnestus edukalt.\n\nAitäh! Lugupidamisega, 2XBET Kasiino"
     msg = MIMEText(content)
     msg["Subject"] = "Makse kinnitamine"
-    msg["From"] = sender
+    msg["From"] = f"2XBET<{sender}>"
     msg["To"] = to_email
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
