@@ -86,6 +86,7 @@ def kontrolli_makset():
         logi_makse(payment_reference, seisund)
         if seisund == "settled":
             saada_email("glebdranitsyn@gmail.com", payment_reference)
+            saada_email(user_email, payment_reference)
             messagebox.showinfo("Makse kinnitatud", "Makse oli edukas. Avame mängu!")
             app.destroy()
             start_blackjack(amount)
