@@ -157,16 +157,16 @@ app = tk.Tk()
 app.title("Оплата через EveryPay")
 app.geometry("400x300")
 
-tk.Label(app, text="Введите сумму для оплаты:", font=("Arial", 12)).pack(pady=5)
-amount_entry = tk.Entry(app, font=("Arial", 14))
+tk.Label(app, text="Sisestage summa:", font=("Algerian", 12)).pack(pady=5)
+amount_entry = tk.Entry(app, font=("Algerian", 14))
 amount_entry.pack(pady=5)
 
-tk.Label(app, text="Введите ваш e-mail:", font=("Arial", 12)).pack(pady=5)
-email_entry = tk.Entry(app, font=("Arial", 14))
+tk.Label(app, text="Sisestage teie e-mail:", font=("Algerian", 12)).pack(pady=5)
+email_entry = tk.Entry(app, font=("Algerian", 14))
 email_entry.pack(pady=5)
 
-tk.Button(app, text="Оплатить", font=("Arial", 14), command=create_payment, bg="green", fg="white").pack(pady=10)
-tk.Button(app, text="Проверить статус", font=("Arial", 14), command=kontrolli_makset, bg="blue", fg="white").pack(pady=10)
+tk.Button(app, text="Maksa", font=("Algerian", 14), command=create_payment, bg="green", fg="white").pack(pady=10)
+tk.Button(app, text="Alusta mängu", font=("Algerian", 14), command=kontrolli_makset, bg="blue", fg="white").pack(pady=10)
 
 # Класс игры (тот же, что и раньше, но встраивается внутрь)
 class BlackjackGame:
