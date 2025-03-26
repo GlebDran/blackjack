@@ -50,7 +50,7 @@ def saada_email(to_email, payment_reference):
     <html>
     <body>
     <h1>Tere!</h1>
-    <h2>Teie makse Summa on: {amount} õnnestus edukalt.</h2><p>Aitäh! <br><br>Lugupidamisega, 2XBET Kasiino</p>
+    <h2>Teie makse Summa on: {amount} eur, õnnestus edukalt teiel kontol.</h2><p>Aitäh! <br><br>Lugupidamisega, 2XBET Kasiino</p>
     <img src="cid:casino">
     </body>
     </html>
