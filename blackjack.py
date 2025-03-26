@@ -1,5 +1,6 @@
 # Объединённый модуль: сначала оплата, затем игра Blackjack
-
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
 import tkinter as tk
 import requests
 import json
@@ -40,11 +41,25 @@ def saada_email(to_email, payment_reference):
     amount=amount_entry.get().strip()
     sender = "glebdranitsyn@gmail.com"
     password = "oeid ycrk uwit tnpk"
-    content = f"Tere!\n\nTeie makse Summa on: {amount} õnnestus edukalt.\n\nAitäh! \n\Lugupidamisega, 2XBET Kasiino"
-    msg = MIMEText(content)
+    # content = f"Tere!\n\nTeie makse Summa on: {amount} õnnestus edukalt.\n\nAitäh! \n\Lugupidamisega, 2XBET Kasiino"
+    msg = MIMEMultipart("Loome kirja koos pildiga")
     msg["Subject"] = "Makse kinnitamine"
     msg["From"] = f"2XBET<{sender}>"
     msg["To"] = to_email
+    html = f"""
+    <html>
+    <body>
+    <h1>Tere!</h1>
+    <h2>Teie makse Summa on: {amount} õnnestus edukalt.</h2><p>Aitäh! <br><br>Lugupidamisega, 2XBET Kasiino</p>
+    <img src="cid:casino">
+    </body>
+    </html>
+    """
+    msg.attach(MIMEText(html, "html"))
+    with open("casino.png", "rb") as f:
+     image = MIMEImage(f.read())
+     image.add_header("Content-ID", "<casino>")
+     msg.attach(image)
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
